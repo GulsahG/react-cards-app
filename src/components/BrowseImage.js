@@ -1,11 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
+import uploadImg from '../img/uploadImg.png';
+
 import { Image } from '@chakra-ui/image';
 import { Input } from '@chakra-ui/input';
-import { Flex, Text } from '@chakra-ui/layout';
-import { AddIcon } from '@chakra-ui/icons';
+import { Box, Flex } from '@chakra-ui/layout';
 
 const BrowseImage = ({ uploadImage, submitted }) => {
-  const [newImage, setNewImage] = useState(null);
+  const [newImage, setNewImage] = useState(uploadImg);
   const imageUploader = useRef(null);
 
   const handleImageUpload = e => {
@@ -13,22 +14,22 @@ const BrowseImage = ({ uploadImage, submitted }) => {
     if (file) {
       const reader = new FileReader();
       reader.onload = e => {
-        setNewImage(e.target.result);
-        uploadImage(e.target.result);
+        setNewImage(e.target.result); // sets the img to the found file
+        uploadImage(e.target.result); // gives the img prop to parent component
       };
       reader.readAsDataURL(file);
     }
   };
-
+  
+  // when submitted gets the old img val back
   useEffect(() => {
-    setNewImage(null);
+    setNewImage(uploadImg); 
   }, [submitted])
 
   return (
     <Flex
       alignItems="start"
       justifyContent="start"
-      w="50%"
     >
       <Input
         type="file"
@@ -40,16 +41,14 @@ const BrowseImage = ({ uploadImage, submitted }) => {
         }}
         
       />
-      <div onClick={() => imageUploader.current.click()}>
-        <AddIcon w={6} h={6} m="1vw"/>
+      <Box onClick={() => imageUploader.current.click()}>
         <Image
           src={newImage}
-          w="40vw"
-          h="40vw"
-          pos="absolute"
+          w={{base: "50vw", lg:"30vw"}}
+          h={{base: "50vw", lg:"30vw"}}
+          m={{base: "5vw", lg: "1.25vw 5vw"}}
         />
-      </div>
-      <Text m="1vw 0">Click to upload image</Text>
+      </Box>
     </Flex>
   );
 }
