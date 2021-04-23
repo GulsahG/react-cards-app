@@ -6,7 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In this project, the user can create a card with that has a **title**, **description**,
 and an **image** that the user can upload locally.
 
-## Available Scripts
+## Live View
+You can see the project live [here](https://react-cards-app.vercel.app/) on *Vercel*.
+
+### Available LocalScripts
 
 In the project directory, you can run:
 
