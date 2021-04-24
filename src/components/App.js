@@ -8,6 +8,7 @@ import { Textarea } from '@chakra-ui/textarea';
 import { Button } from '@chakra-ui/button';
 import { Box } from '@chakra-ui/layout';
 import { Text } from '@chakra-ui/layout';
+import { Divider } from '@chakra-ui/layout';
 
 const App = () => {
   const [title, setTitle] = useState('New title');
@@ -81,6 +82,13 @@ const App = () => {
         w={{base: "7.5vw", lg: "3.5vw"}}
       />
     </form>
+    <Divider 
+      orientation="horizontal" 
+      bg="gray"
+      h="10px"
+      w={{base: "91vw", lg: "55vw"}}
+      m={{base: "15vw -15vw", lg: "5vw -8.5vw"}}
+    />
     <Card 
       title={currentCard[0]} 
       desc={currentCard[1]}
