@@ -1,34 +1,54 @@
 import React from 'react';
 import { Image } from '@chakra-ui/image';
-import { Box, Heading, Text } from '@chakra-ui/layout';
+import { Box, Text } from '@chakra-ui/layout';
 
 const Card = ({title, desc, image}) => {
   return (
     <Box 
-      m={{base: "15vw 0 7.5vw 0", lg: "5vw 0"}} 
+      m={{base: "15vw 0 7.5vw 0", lg: "5vw 0"}}
+      w={{base: "61vw", lg:"38vw"}}  
     >
-      <Heading
-        m="1vw 0"
-        as="h1" 
-        color="brand.700"
-        fontSize={{base: "1.5rem", lg:"2.25rem"}}
-      >
-        Title: {title}
-      </Heading>
       <Text
-        m="1vw"
-        fontSize={{base:"md", lg:"lg"}}
-        textAlign="justify"
+        p={{base: "2vw 1.5vw", lg: "1.5vw"}}
+        fontSize={{base:"lg", lg:"xl"}}
+        w="50%"
+        border="2px solid black"
+        borderBottomWidth="0"
+        borderTopRadius="20px"
+        pos="relative"
+        zIndex="-1"
       >
-        Description: <br/>{desc}
+        New Title
       </Text>
-      <Image
-        src={image}
-        w={{base: "50vw", lg:"30vw"}}
-        h={{base: "50vw", lg:"30vw"}}
-        m={{base: "5vw auto", lg: "2.5vw auto"}}
-        boxShadow="dark-lg"
-      />
+      <Box 
+        style={{border: "2px solid black", borderRadius:"20px", 
+        position:"relative", marginTop:"-1.25vw", zIndex:"1", 
+        backgroundColor: "white", padding:"1.5vw 0"}}
+      >
+        <Text
+          m="0 1.5vw"
+          size="lg"
+          fontSize={{base:"xl", lg:"2xl"}}
+          fontWeight="bold"
+          color="#bc5935"
+        >
+          {title}
+        </Text>
+        <Text
+          m="1vw 1.5vw"
+          minH="15vw"
+          fontSize={{base:"lg", lg:"xl"}}
+        >
+          {desc}
+        </Text>
+        <Image
+          src={image}
+          w={{base: "58vw", lg:"35vw"}}
+          h={{base: "54vw", lg: "32.5vw"}}
+          m="2.5vw auto 2.5vw auto"
+          bg="lightgray"
+        />
+      </Box>
     </Box>
   )
 }

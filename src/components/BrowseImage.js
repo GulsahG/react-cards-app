@@ -39,14 +39,14 @@ const BrowseImage = ({ uploadImage, submitted }) => {
         style={{
           display: "none"
         }}
-        
       />
-      <Box onClick={() => imageUploader.current.click()}>
+      <Box pos="relative"
+      onClick={() => imageUploader.current.click()}>
         <Image
           src={newImage}
-          w={{base: "50vw", lg:"30vw"}}
-          h={{base: "50vw", lg:"30vw"}}
-          m={{base: "5vw", lg: "1.25vw 5vw"}}
+          w={{base: "58vw", lg:"35vw"}}
+          h={{base: "54vw", lg: "32.5vw"}}
+          m="2.5vw 1.25vw 0 1.25vw"
         />
       </Box>
     </Flex>
