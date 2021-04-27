@@ -33,7 +33,7 @@ const App = () => {
     m={{base: "7.5vw auto", lg:"2.5vw auto"}}
   >
     <Text
-      p={{base: "2vw 1.5vw", lg: "1.5vw"}}
+      p={{base: "2vw 1.85vw", lg: "1.85vw"}}
       fontSize={{base:"lg", lg:"xl"}}
       w="50%"
       border="2px solid black"
